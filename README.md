@@ -5,3 +5,4 @@
 	* [Model](MVP/Model.cs)
 	* [Presenter](MVP/Presenter.cs)
 	* [View](MVP/View.cs)
+3. Точка входа - [Program](Program.cs)
