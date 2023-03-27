@@ -1,5 +1,4 @@
-﻿
-namespace ConsoleApp1
+﻿namespace ConsoleApp1.Infrastructure
 {
     public class Triangle : ShapeBase, Perimetrable
     {
@@ -9,22 +8,22 @@ namespace ConsoleApp1
             if (side1 + side2 < side3 |
                 side1 + side3 < side2 |
                 side2 + side3 < side1) throw new Exception("Такого треугольника не существует");
-            this.sideA = side1;
-            this.sideB = side2;
-            this.sideC = side3;
+            sideA = side1;
+            sideB = side2;
+            sideC = side3;
         }
         public override double Area()
         {
             double semiPerimter = Perimetrable() / 2;
-            return Math.Sqrt(semiPerimter * (semiPerimter - this.sideA) * (semiPerimter - this.sideB) * (semiPerimter - this.sideC));
+            return Math.Sqrt(semiPerimter * (semiPerimter - sideA) * (semiPerimter - sideB) * (semiPerimter - sideC));
         }
         public double Perimetrable()
         {
-            return this.sideA + this.sideB + this.sideC;
+            return sideA + sideB + sideC;
         }
         public override string ToString()
         {
-            return $"{base.ToString()} - треугольник со сторонами {this.sideA},{this.sideB},{this.sideC}";
+            return $"{base.ToString()} треугольник со сторонами {sideA},{sideB},{sideC}";
         }
     }
 
